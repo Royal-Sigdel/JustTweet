@@ -2,37 +2,177 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile-cover {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-avatar-container {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid white;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-avatar {
+  display: block;
 }
+
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: white;
+  border-top: 1px solid #e1e8ed;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.stat-label {
+  display: block;
+  color: gray;
+}
+
+.profile-info {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.profile-info h2 {
+  margin-bottom: 5px;
+}
+
+.profile-info .handle {
+  color: gray;
+}
+
+.profile-info .profile-link {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.profile-info .location, 
+.profile-info .join-date {
+  color: gray;
+}
+
+.profile-info .tweet-button {
+  margin-top: 10px;
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.profile-info .photos-videos {
+  margin-top: 20px;
+}
+
+.profile-info .media-count {
+  color: #1da1f2;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-info .media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.profile-info .media-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+
+.new-tweet {
+  margin-bottom: 20px;
+}
+
+.tweet-card {
+  margin-bottom: 20px;
+}
+
+.right-panel .btn {
+  margin-right: 5px;
+}
+
+.right-panel .btn:last-child {
+  margin-right: 0;
+}
+.navbar .form-inline {
+  margin-left: auto;
+}
+
+.navbar .form-inline .form-control {
+  width: auto;
+}
+/* Navbar.css */
+.topnav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.right-panel .list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-panel .rounded-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.tweet-card .tweet-stats {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.tweet-card .tweet-stats span {
+  margin-right: 20px;
+}
+
+.tweet-card .btn-link {
+  color: gray;
+  text-decoration: none;
+}
+
+.tweet-card .btn-link:hover {
+  color: red;
+}
+
+.new-tweet .form-control {
+  resize: none;
+}
+
+.new-tweet .btn-primary {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+
