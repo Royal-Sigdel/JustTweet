@@ -1,32 +1,30 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const app = express();
 const port = 3000;
+const cors = require('cors');
 
-// Middleware
+
+
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+;
 
-const dbURI = 'mongodb+srv://alinsigdel:Pioneer123@justtweet.dwweefi.mongodb.net/?retryWrites=true&w=majority&appName=JustTweet';
-
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://alinsigdel:Pioneer123@justtweet.dwweefi.mongodb.net/?retryWrites=true&w=majority&appName=JustTweet')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Tweet Schema and Model
-const tweetSchema = new mongoose.Schema({
-  content: String,
-  date: { type: Date, default: Date.now }
-});
+
+  const tweetSchema = new mongoose.Schema({
+    content: String,
+  }, { timestamps: true });
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
 
-// Routes
+
 app.get('/tweets', async (req, res) => {
-  const tweets = await Tweet.find();
+  const tweets = await Tweet.find().sort({ createdAt: -1 });
   res.json(tweets);
 });
 
